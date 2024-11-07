@@ -2,8 +2,7 @@ POST http://localhost:3008/api/to-do-list/addTask
 content-type: application/json
 
 {
-	"task": "wash the dishes",
-	"task": "go home"
+	"task": "wash the dishes"
 }
 
 ###

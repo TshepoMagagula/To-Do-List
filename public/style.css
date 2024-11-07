@@ -107,3 +107,7 @@ ul li span:hover{
     background: #edeef0;
 }
 
+.itemList{
+    height: 230px;
+    overflow-y: auto;
+}
