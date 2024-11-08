@@ -111,3 +111,22 @@ ul li span:hover{
     height: 230px;
     overflow-y: auto;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+footer {
+    padding: 5px;
+    background-image: url('./images/BG.jpg');
+    background-repeat: no-repeat;
+    text-align: right;
+    color: #fff;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
