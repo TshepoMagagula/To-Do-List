@@ -18,6 +18,7 @@ function addTask() {
             if (data.status === 'success') {
                 inputBox.value = '';
                 renderTasks();
+                listContainer.scrollTop = listContainer.scrollHeight;
             } else {
                 alert(data.message);
             }
@@ -44,6 +45,7 @@ function renderTasks() {
                 const span = document.createElement("span");
                 span.innerHTML = "&times;";
                 li.appendChild(span);
+                listContainer.scrollTop = listContainer.scrollHeight;
             });
         })
         .catch(error => {
@@ -106,3 +108,14 @@ listContainer.addEventListener("click", function(e){
         });
     }
 }, false)
+
+document.addEventListener("DOMContentLoaded", function() {
+    renderTasks();
+});
+
+inputBox.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        addTask();
+    }
+});
