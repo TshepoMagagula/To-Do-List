@@ -9,15 +9,24 @@ html, body {
 
 h1 {
     color: #edeef0;
+    text-align: center;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size:47px;
+}
+
+h2 {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size:32px;
 }
 
 .todo-app{
     width: 100%;
     max-width: 540px;
     background: #fff;
-    margin: 100px auto 20px;
+    margin: 64px auto 26.5px;
     padding: 40px 30px 70px;
     border-radius: 10px;
+    margin-top: 0px;
 }
 
 .row {
@@ -150,7 +159,7 @@ footer {
 }
 
 .modal {
-    display: none; /* Hidden by default */
+    display: none; /* Hide modal by default */
     position: fixed;
     top: 0;
     left: 0;

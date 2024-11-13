@@ -7,7 +7,7 @@ const saveBtn = document.getElementById("saveBtn");
 const cancelBtn = document.getElementById("cancelBtn");
 const closeBtn = document.querySelector(".close-btn");
 
-let taskToEdit = "";
+let taskToEdit = ""; // This holds the task that will be edited
 
 function addTask() {
     if (inputBox.value === '') {
@@ -120,6 +120,7 @@ listContainer.addEventListener("click", function(e){
                 alert("There was an error deleting the task.");
             });
         }else if (e.target.classList.contains("edit-icon")){
+            //Opens the modal when clicking the edit icon
             taskToEdit = e.target.parentElement.innerText.replace("×", "").trim();
             editInput.value = taskToEdit; 
             editModal.style.display = "flex"; 
@@ -127,13 +128,16 @@ listContainer.addEventListener("click", function(e){
     }
 }, false)
 
+// Event listener to close the modal on clicking close or cancel
 closeBtn.addEventListener("click", () => editModal.style.display = "none");
 cancelBtn.addEventListener("click", () => editModal.style.display = "none");
 
+// Save the edited task
 saveBtn.addEventListener("click", () => {
     const updatedTask = editInput.value.trim();
 
     if (updatedTask && updatedTask !== taskToEdit) {
+        // Send update request to server
         fetch('http://localhost:3008/api/to-do-list/editTask', {
             method: 'POST',
             headers: {
