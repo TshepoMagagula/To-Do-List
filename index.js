@@ -56,5 +56,28 @@ app.post('/api/to-do-list/deleteTask', async function(req, res){
     }
 });
 
+app.post('/api/to-do-list/editTask', async function(req, res){
+    const {oldTask, newTask} = req.body;
+    console.log("Old Task:", oldTask);
+    console.log("New Task:", newTask);
+    console.log("Task List:", task_list);
+
+    const taskIndex = task_list.findIndex(task => task.toLowerCase().trim() === oldTask.toLowerCase().trim());;
+
+    if (taskIndex > -1) {
+        task_list[taskIndex] = newTask.trim();
+        res.json({
+            status: 'success',
+            message: `Task updated to "${newTask}"`
+        });
+    }else {
+        res.json({
+            status: 'failed',
+            message: 'The task does not exist in the To-Do-List'
+        })
+    }
+
+})
+
 app.listen(PORT, () => console.log(`started on port : ${PORT}`))
 console.log("done!")

@@ -16,3 +16,12 @@ content-type: application/json
 ###
 GET http://localhost:3008/api/to-do-list
 content-type: application/json
+
+###
+POST http://localhost:3008/api/to-do-list/editTask
+content-type: application/json
+
+{
+	"oldTask": "wash the dishes",
+	"newTask": "wash cups"
+}

@@ -28,7 +28,7 @@ Storage: LocalStorage for persisting tasks across sessions
 Clone the repository:
 bash
 Copy code
-git clone https://github.com/your-username/todo-list-app.git
+git clone https://github.com/TshepoMagagula/To-Do-List.git
 Navigate to the project directory:
 bash
 Copy code
