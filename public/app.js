@@ -14,7 +14,7 @@ function addTask() {
     if (inputBox.value === '') {
         alert("You must write something!");
     } else {
-        fetch('http://localhost:3009/api/to-do-list/addTask', {
+        fetch('https://to-do-list-owxz.onrender.com/api/to-do-list/addTask', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -40,7 +40,7 @@ function addTask() {
 
 function renderTasks() {
     // Fetch the current task list from the server
-    fetch('http://localhost:3009/api/to-do-list')
+    fetch('https://to-do-list-owxz.onrender.com/api/to-do-list')
         .then(response => response.json())
         .then(tasks => {
             listContainer.innerHTML = '';
@@ -72,7 +72,7 @@ function deleteTask() {
     if (inputBox.value === '') {
         alert("You must write something!");
     } else {
-        fetch('http://localhost:3009/api/to-do-list/deleteTask', {
+        fetch('https://to-do-list-owxz.onrender.com/api/to-do-list/deleteTask', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -102,7 +102,7 @@ listContainer.addEventListener("click", function(e){
         if (e.target.classList.contains("delete-icon")){ //deletes task when "x" icon is clicked
             const taskToRemove = e.target.parentElement.innerText.replace("×", "").trim();
 
-            fetch('http://localhost:3009/api/to-do-list/deleteTask', {
+            fetch('https://to-do-list-owxz.onrender.com/api/to-do-list/deleteTask', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -140,7 +140,7 @@ saveBtn.addEventListener("click", () => {
 
     if (updatedTask && updatedTask !== taskToEdit) {
         // Send update request to server
-        fetch('http://localhost:3009/api/to-do-list/editTask', {
+        fetch('https://to-do-list-owxz.onrender.com/api/to-do-list/editTask', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
