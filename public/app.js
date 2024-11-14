@@ -9,18 +9,19 @@ const closeBtn = document.querySelector(".close-btn");
 
 let taskToEdit = ""; // This holds the task that will be edited
 
+// use the addTask endpoint created in index.js to add a new task to the task_list
 function addTask() {
     if (inputBox.value === '') {
         alert("You must write something!");
     } else {
-        fetch('http://localhost:3008/api/to-do-list/addTask', {
+        fetch('http://localhost:3009/api/to-do-list/addTask', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({ task: inputBox.value })
         })
-        .then(response => response.json())
+        .then(response => response.json()) //response from the server
         .then(data => {
             if (data.status === 'success') {
                 inputBox.value = '';
@@ -39,7 +40,7 @@ function addTask() {
 
 function renderTasks() {
     // Fetch the current task list from the server
-    fetch('http://localhost:3008/api/to-do-list')
+    fetch('http://localhost:3009/api/to-do-list')
         .then(response => response.json())
         .then(tasks => {
             listContainer.innerHTML = '';
@@ -66,11 +67,12 @@ function renderTasks() {
         });
 }
 
+// use the api endpoint created in index.js to remove a task from the task_list
 function deleteTask() {
     if (inputBox.value === '') {
         alert("You must write something!");
     } else {
-        fetch('http://localhost:3008/api/to-do-list/deleteTask', {
+        fetch('http://localhost:3009/api/to-do-list/deleteTask', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -95,12 +97,12 @@ function deleteTask() {
 
 listContainer.addEventListener("click", function(e){
     if(e.target.tagName === "LI"){
-        e.target.classList.toggle("checked");
+        e.target.classList.toggle("checked"); //when task is clicked it will be marked as completed
     }else if(e.target.tagName ==="SPAN"){
-        if (e.target.classList.contains("delete-icon")){
+        if (e.target.classList.contains("delete-icon")){ //deletes task when "x" icon is clicked
             const taskToRemove = e.target.parentElement.innerText.replace("×", "").trim();
 
-            fetch('http://localhost:3008/api/to-do-list/deleteTask', {
+            fetch('http://localhost:3009/api/to-do-list/deleteTask', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -138,7 +140,7 @@ saveBtn.addEventListener("click", () => {
 
     if (updatedTask && updatedTask !== taskToEdit) {
         // Send update request to server
-        fetch('http://localhost:3008/api/to-do-list/editTask', {
+        fetch('http://localhost:3009/api/to-do-list/editTask', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -163,10 +165,12 @@ saveBtn.addEventListener("click", () => {
     }
 });
 
+// renders the task list to the UI when the page loads or refreshes
 document.addEventListener("DOMContentLoaded", function() {
     renderTasks();
 });
 
+// Activates the addTask() method when enter is clicked on the enter task input box
 inputBox.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
         event.preventDefault();

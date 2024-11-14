@@ -116,6 +116,7 @@ ul li span:hover{
     background: #edeef0;
 }
 
+
 .itemList{
     height: 230px;
     overflow-y: auto;
@@ -185,6 +186,39 @@ footer {
     cursor: pointer;
 }
 
+#editInput {
+    background-color: #dbd8d8;
+    border-radius: 5px;
+}
+
+#editInput:hover {
+    transform: scale(1.05); 
+}
+
 button {
     margin: 5px;
+}
+
+/* Make the application responsive */
+@media screen and (max-width: 620px) {
+    .todo-app{
+        width: 100%;
+        max-width: 300px;
+    }
+
+    button {
+        padding: 13px 40px;
+    }
+
+    ul li{
+        list-style: none;
+        font-size: 11px;
+        padding: 12px 8px 12px 50px;
+        cursor: pointer;
+    }
+
+    .edit-icon {
+        margin-right: 25px;
+    }
+
 }

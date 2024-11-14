@@ -6,12 +6,11 @@ app.use(express.static('public'));
 app.use(express.json());
 app.use(cors());
 
-const PORT = process.env.PORT || 3008;
+const PORT = process.env.PORT || 3009;
 
-export let task_list = [
+export let task_list = [] //stores task added by user
 
-]
-
+//endpoint to add a task from the user to task_list array
 app.post('/api/to-do-list/addTask', async function(req, res){
     const task = req.body.task;
 
@@ -29,10 +28,12 @@ app.post('/api/to-do-list/addTask', async function(req, res){
     }
 });
 
+//endpoint to retrieve all tasks from task_list array
 app.get('/api/to-do-list', (req, res) => {
     res.json(task_list);
 });
 
+//endpoint to delete a task from task_list array
 app.post('/api/to-do-list/deleteTask', async function(req, res){
     const taskToRemove = req.body.task;
 
@@ -56,6 +57,7 @@ app.post('/api/to-do-list/deleteTask', async function(req, res){
     }
 });
 
+//endpoint to edit a task on the task_list array
 app.post('/api/to-do-list/editTask', async function(req, res){
     const {oldTask, newTask} = req.body;
     console.log("Old Task:", oldTask);
