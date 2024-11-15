@@ -25,15 +25,27 @@ Frontend: HTML, CSS, JavaScript (vanilla)
 Storage: LocalStorage for persisting tasks across sessions
 
 ## Installation
-Clone the repository:
-bash
-Copy code
+1. **Clone the repository:**
+```bash
 git clone https://github.com/TshepoMagagula/To-Do-List.git
-Navigate to the project directory:
-bash
-Copy code
-cd todo-list-app
-Open the application: Open index.html in your web browser to view the application.
+```
+
+2. **Navigate to the project directory:**
+```bash
+cd To-Do-List
+```
+
+3. **Open the application: Open index.html in your web browser to view the application.**
+
+4. **Install dependencies**
+```bash
+npm install
+```
+
+5. **Start Server**
+```bash
+npm start
+```
 
 ## Usage
 Adding Tasks: Enter a task name in the input field and click "Add" to create a new task.
@@ -44,7 +56,31 @@ Deleting Tasks: Use the "Delete" button to remove a task from the list.
 Persistent Storage: Tasks are saved automatically and will remain after refreshing the page or closing the browser.
 
 ## Screenshots
-Include screenshots of the main interface and CRUD functionality here.
+1. **Adding Tasks:**
+![alt text](ToDo.JPG)
+
+2. **Viewing Tasks:**
+![alt text](ToDo1.JPG)
+
+3. **Marking as Completed:**
+![alt text](ToDo2.JPG)
+
+4. **Editing Tasks:**
+![alt text](ToDo3.JPG)
+
+5. **Deleting Tasks:**
+Clicking Delete Button:
+![alt text](<Screenshot (47).png>) ![alt text](<Screenshot (48).png>)
+
+Result:
+![alt text](<Screenshot (48)-1.png>) ![alt text](<Screenshot (47)-1.png>)
+
+6. **Persistent Storage:**
+While Refreshing:
+![alt text](<Screenshot (49).png>)
+
+After Refresh:
+![alt text](<Screenshot (50).png>)
 
 ## Future Enhancements
 Categories/Tags: Organize tasks by category or tag for better management.
