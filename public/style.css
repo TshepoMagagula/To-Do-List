@@ -5,19 +5,29 @@ html, body {
     height: 100%;
     font-family: sans-serif;
     box-sizing: border-box;
+    margin: 0;
 }
 
 h1 {
     color: #edeef0;
+    text-align: center;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size:47px;
+}
+
+h2 {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size:32px;
 }
 
 .todo-app{
     width: 100%;
     max-width: 540px;
     background: #fff;
-    margin: 100px auto 20px;
+    margin: 64px auto 26.5px;
     padding: 40px 30px 70px;
     border-radius: 10px;
+    margin-top: 0px;
 }
 
 .row {
@@ -88,4 +98,127 @@ ul li.checked{
 
 ul li.checked::before {
     background-image: url(images/checklist.png);
+}
+
+ul li span {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+ul li span:hover{
+    background: #edeef0;
+}
+
+
+.itemList{
+    height: 230px;
+    overflow-y: auto;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+section.main {
+    flex: 1; /* This makes the main content expand and push the footer down */
+}
+
+footer {
+    padding: 5px;
+    background-image: url('./images/BG.jpg');
+    background-repeat: no-repeat;
+    text-align: right;
+    color: #fff;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.edit-icon {
+    margin-right: 45px;
+    cursor: pointer;
+    background-image: url('./images/editing.png');
+    background-repeat: no-repeat;
+    border-radius: 20%;
+}
+
+.edit-icon:hover {
+    background-image: url('./images/editing.png');
+    background-repeat: no-repeat;
+    background-position:center;
+}
+
+.delete-icon:hover {
+    font-size: 25px;
+}
+
+.modal {
+    display: none; /* Hide modal by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    max-width: 80%;
+    text-align: center;
+}
+
+.close-btn {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#editInput {
+    background-color: #dbd8d8;
+    border-radius: 5px;
+}
+
+#editInput:hover {
+    transform: scale(1.05); 
+}
+
+button {
+    margin: 5px;
+}
+
+/* Make the application responsive */
+@media screen and (max-width: 620px) {
+    .todo-app{
+        width: 100%;
+        max-width: 300px;
+    }
+
+    button {
+        padding: 13px 40px;
+    }
+
+    ul li{
+        list-style: none;
+        font-size: 11px;
+        padding: 12px 8px 12px 50px;
+        cursor: pointer;
+    }
+
+    .edit-icon {
+        margin-right: 25px;
+    }
+
 }

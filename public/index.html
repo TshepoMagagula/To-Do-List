@@ -10,17 +10,28 @@
     <h1>To-Do List</h1>
     <section class="main">
         <div class="todo-app">
-            <h2>To-Do List <img src="./images/toDo.jpg"></h2>
+            <h2>Your Tasks <img src="./images/toDo.jpg"></h2>
             <div class="row">
-                <input type="text" id="input-box" placeholder="Add your text">
-                <button>Add</button>
-            </div>
-            <ul id="list-container">
-                <li class="checked">Task 1</li>
-                <li>Task 2</li>
-                <li>Task 3</li>
+                <input type="text" id="input-box" placeholder="Add your text" maxlength="21">
+                <button onclick="addTask()">Add</button>
+            </div>    
+            <ul id="list-container" class="list-container itemList" height="400px">
+              
             </ul>
         </div>
+        <div id="editModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Edit Task</h2>
+                <input type="text" id="editInput" placeholder="Edit your task here" maxlength="21">
+                <button id="saveBtn">Save</button>
+                <button id="cancelBtn">Cancel</button>
+            </div>
+        </div>        
     </section>
+    <footer>
+        <p>copyright © 2024 Tshepo Magagula</p>
+    </footer>
+    <script src="app.js"></script>
 </body>
 </html>
