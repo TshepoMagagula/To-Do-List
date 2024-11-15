@@ -69,17 +69,17 @@ Persistent Storage: Tasks are saved automatically and will remain after refreshi
 ![alt text](ToDo3.JPG)
 
 5. **Deleting Tasks:**
-Clicking Delete Button:
-![alt text](<Screenshot (47).png>) ![alt text](<Screenshot (48).png>)
+- Clicking Delete Button:
+![alt text](<Screenshot (47).png>)
 
-Result:
-![alt text](<Screenshot (48)-1.png>) ![alt text](<Screenshot (47)-1.png>)
+- Result:
+![alt text](<Screenshot (48)-1.png>)
 
 6. **Persistent Storage:**
-While Refreshing:
+- While Refreshing:
 ![alt text](<Screenshot (49).png>)
 
-After Refresh:
+- After Refresh:
 ![alt text](<Screenshot (50).png>)
 
 ## Future Enhancements
